@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dashboard from './Dashboard';
 import CarteHeatmap from './components/CarteHeatmap/CarteHeatmap';
+import Alertes from './components/Alertes/Alertes';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/CarteHeatmap" element={<CarteHeatmap />} />
+        <Route path="/Alertes" element={<Alertes />} />
 
         
 

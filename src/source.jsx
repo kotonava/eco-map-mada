@@ -31,7 +31,7 @@ export const routes = [
   },
   {
     name: "Alertes",
-    path: "/alerts",
+    path: "/Alertes",
     icon: FaRegBell,
   },
   {
