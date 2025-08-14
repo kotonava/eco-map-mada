@@ -1,0 +1,79 @@
+/* src/pages/Summaries/Summaries.css */
+
+.summaries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  width: 100%; /* S'assure que la grille prend toute la largeur */
+}
+.summaries .spotlight {
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+}
+.summaries .summary {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.summaries .summary:hover {
+  transform: translateY(-5px);
+}
+
+.summaries .summary .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.summaries .summary .top > div {
+  /* Style pour le texte (valeur et titre) */
+}
+.summaries .summary .top .title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+.summaries .summary .top .muted {
+  font-size: 0.9rem;
+  color: rgb(var(--text-muted));
+}
+.summaries .summary .top > .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 6px;
+  /* Les couleurs sont maintenant gérées directement dans le composant React */
+}
+.summaries .summary .bottom {
+  margin-top: 20px;
+}
+.summaries .summary .bottom > .percent {
+  padding: 2px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+/* Responsive code */
+@media screen and (max-width: 1100px) {
+  .summaries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .summaries {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .summaries .summary .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

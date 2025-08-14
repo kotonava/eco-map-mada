@@ -1,0 +1,65 @@
+/* src/pages/Dashboard/InvoiceStatistics/InvoiceStatistics.css */
+
+.alertes-card {
+  margin-top: 20px;
+  background-color: rgb(var(--color-white));
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  /* border: 1px solid rgb(var(--border)); */
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .alertes-card {
+  background-color: rgb(var(--ui-secondary));
+  border-color: rgb(var(--border));
+}
+
+.alertes-card > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.alertes-card .title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: rgb(var(--text-color));
+}
+
+.alertes-card .alertes-pending {
+  font-size: 0.875rem;
+  color: rgb(var(--text-muted));
+}
+
+.alerts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(var(--border));
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+.alert-item .bell-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor; /* La couleur de l'icône sera la même que celle du texte */
+}
+
+.alert-item .alert-message {
+  font-size: 0.95rem;
+  color: rgb(var(--text-color));
+  transition: var(--transition);
+}

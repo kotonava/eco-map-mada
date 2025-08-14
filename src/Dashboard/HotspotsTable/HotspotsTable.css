@@ -1,0 +1,110 @@
+/* src/components/HotspotsTable/HotspotsTable.css */
+
+.hotspots-card {
+  margin-top: 1.5rem;
+  background-color: rgb(var(--color-white));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid rgb(var(--border));
+}
+
+[data-theme="dark"] .hotspots-card {
+  background-color: rgb(var(--ui-secondary));
+  border-color: rgb(var(--border));
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  color: rgb(var(--text-color));
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.hotspots-table {
+  width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.hotspots-table thead {
+  background-color: rgb(var(--ui-secondary));
+  color: rgb(var(--text-color));
+}
+
+[data-theme="dark"] .hotspots-table thead {
+  background-color: rgba(var(--border), 0.5);
+}
+
+.hotspots-table th,
+.hotspots-table td {
+  padding: 0.5rem;
+  color: rgb(var(--text-muted));
+  transition: var(--transition);
+}
+
+.hotspots-table tbody tr {
+  border-top: 1px solid rgb(var(--border));
+}
+
+.hotspots-table tbody tr.even-row {
+  background-color: rgba(var(--ui-secondary), 0.2);
+}
+
+.hotspots-table tbody tr:hover {
+  background-color: rgba(var(--ui-secondary), 0.5);
+}
+
+.hotspots-table tbody tr:hover td {
+  color: rgb(var(--text-color));
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid rgb(var(--border));
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.button-view {
+  color: rgb(var(--text-color));
+}
+.button-view:hover {
+  background-color: rgba(var(--border), 0.5);
+}
+
+.button-alert {
+  color: rgb(var(--color-danger));
+}
+.button-alert:hover {
+  background-color: rgba(var(--color-danger), 0.1);
+}
+
+.severity-critique {
+  color: rgb(var(--color-danger));
+  font-weight: 600;
+}
+.severity-élevée {
+  color: rgb(var(--color-warning));
+  font-weight: 600;
+}
+.severity-moyenne {
+  color: rgb(var(--primary));
+}
+.severity-faible {
+  color: rgb(var(--text-muted));
+}

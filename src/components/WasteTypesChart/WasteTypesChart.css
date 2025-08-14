@@ -1,0 +1,26 @@
+/* src/components/WasteTypesChart/WasteTypesChart.css */
+
+.chart-card {
+    background-color: rgb(var(--color-white));
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+  }
+  
+  [data-theme="dark"] .chart-card {
+    background-color: rgb(var(--ui-secondary));
+  }
+  
+  .chart-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: rgb(var(--text-color));
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    fill: rgb(var(--text-muted));
+  }
