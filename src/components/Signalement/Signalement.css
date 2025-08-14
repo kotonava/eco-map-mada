@@ -1,0 +1,235 @@
+/* =======================
+   Thème – Variables
+   ======================= */
+   :root {
+    /* Clair */
+    --bg: #F7F7F2;
+    --panel: #ffffff;
+    --muted: rgba(0,0,0,0.06);
+    --txt: #4A4A4A;
+    --title: #262626;
+    --primary: #2A5243;      /* vert forêt clair */
+    --primary-weak: #5D8B7B; /* vert forêt sombre (hover dark) */
+    --accent: #D97D3C;       /* orange brûlé */
+    --accent-hover: #E79B5D; /* hover clair */
+    --border: rgba(0,0,0,0.08);
+  
+    /* Badges */
+    --crit: #8A353A;
+    --elev: #D97D3C;
+    --moy: #2A5243;
+    --faib: #7cb08a;
+  }
+  
+  .theme-dark {
+    --bg: #1C2321;
+    --panel: #171C1A;
+    --muted: rgba(255,255,255,0.06);
+    --txt: #B0B0B0;
+    --title: #F7F7F2;
+    --primary: #5D8B7B;       /* vert forêt (sombre) */
+    --primary-weak: #2A5243;
+    --accent: #FF9550;        /* orange brûlé (dark) */
+    --accent-hover: #FFB27A;  /* hover dark */
+    --border: rgba(255,255,255,0.08);
+  
+    --crit: #C45E65;
+    --elev: #FF9550;
+    --moy: #5D8B7B;
+    --faib: #7fd2a1;
+  }
+  
+  /* =======================
+     Layout global
+     ======================= */
+  .sig-root {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--txt);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    padding: 24px;
+  }
+  
+  .sig-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .sig-header h1 {
+    color: var(--title);
+    font-size: 28px;
+    font-weight: 800;
+  }
+  
+  /* Grid 3 colonnes */
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr 0.9fr;
+    gap: 16px;
+  }
+  @media (max-width: 1100px) {
+    .sig-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* Carte / cartes latérales */
+  .sig-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 0 0 1px var(--muted);
+  }
+  
+  /* =======================
+     Formulaire
+     ======================= */
+  .sig-form .form-group { margin-bottom: 14px; }
+  .sig-form label {
+    display: block;
+    font-size: 14px;
+    color: var(--title);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .sig-form .inline {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sig-form .hint { font-size: 12px; opacity: 0.8; }
+  
+  .sig-form input[type="text"],
+  .sig-form input[type="date"],
+  .sig-form select,
+  .sig-form textarea {
+    width: 100%; border: 1px solid var(--border);
+    background: rgba(0,0,0,0.03);
+    color: var(--txt);
+    border-radius: 10px;
+    padding: 10px 12px;
+    outline: none;
+  }
+  .theme-dark .sig-form input[type="text"],
+  .theme-dark .sig-form input[type="date"],
+  .theme-dark .sig-form select,
+  .theme-dark .sig-form textarea {
+    background: rgba(255,255,255,0.04);
+  }
+  
+  .sig-form .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  @media (max-width: 640px) { .sig-form .form-row { grid-template-columns: 1fr; } }
+  
+  /* Upload */
+  .upload {
+    display: flex; align-items: center; justify-content: center;
+    height: 120px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    background: rgba(0,0,0,0.03);
+    color: var(--txt);
+    cursor: pointer;
+  }
+  .theme-dark .upload { background: rgba(255,255,255,0.04); }
+  .upload input { display: none; }
+  .upload span { opacity: .9; }
+  
+  .preview-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    margin-top: 10px;
+  }
+  .preview-grid img {
+    width: 100%; height: 80px; object-fit: cover;
+    border-radius: 10px; border: 1px solid var(--border);
+  }
+  
+  /* =======================
+     Carte principale
+     ======================= */
+  .map-wrap {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  
+  /* =======================
+     Colonne droite
+     ======================= */
+  .side-head {
+    color: var(--title);
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .mt { margin-top: 16px; }
+  
+  .filters {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin-bottom: 10px;
+  }
+  .filters select, .filters input[type="date"] {
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.03);
+    color: var(--txt);
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+  .theme-dark .filters select,
+  .theme-dark .filters input[type="date"] {
+    background: rgba(255,255,255,0.04);
+  }
+  
+  .recent-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .recent-item {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center;
+    padding: 10px; border: 1px solid var(--border); border-radius: 12px;
+    background: rgba(0,0,0,0.02);
+  }
+  .theme-dark .recent-item { background: rgba(255,255,255,0.02); }
+  .recent-item .title { color: var(--title); font-weight: 700; }
+  .recent-item .meta { font-size: 12px; opacity: .8; }
+  
+  .badge {
+    font-size: 12px; text-transform: capitalize; font-weight: 800;
+    padding: 4px 8px; border-radius: 999px; color: #fff;
+    display: inline-block; min-width: 70px; text-align: center;
+  }
+  .badge.critique { background: var(--crit); }
+  .badge.élevée { background: var(--elev); }
+  .badge.moyenne { background: var(--moy); }
+  .badge.faible { background: var(--faib); color: #173b2e; }
+  
+  /* =======================
+     Boutons
+     ======================= */
+  .btn {
+    --btn-bg: var(--accent);
+    --btn-bg-hover: var(--accent-hover);
+    border: none; border-radius: 12px;
+    padding: 10px 14px; color: #fff; font-weight: 700;
+    cursor: pointer; transition: .2s ease;
+  }
+  .btn.primary { background: var(--primary); }
+  .btn.primary:hover { background: var(--primary-weak); }
+  .btn.block { width: 100%; margin-top: 6px; }
+  
+  .btn.ghost {
+    background: transparent; color: var(--title);
+    border: 1px solid var(--border);
+  }
+  .btn.ghost:hover { background: rgba(0,0,0,0.05); }
+  .theme-dark .btn.ghost:hover { background: rgba(255,255,255,0.06); }
+  
+  .btn.outline {
+    background: transparent; color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+  .btn.outline:hover { background: rgba(90, 146, 122, 0.12); }
+  
+  .btn.link {
+    background: transparent; color: var(--primary);
+    padding: 6px 8px; border-radius: 8px;
+  }
+  .btn.link:hover { background: rgba(90, 146, 122, 0.12); }
+  

@@ -26,7 +26,7 @@ export const routes = [
   },
   {
     name: "Signalement",
-    path: "/report",
+    path: "/Signalement",
     icon: MdOutlineReport,
   },
   {
